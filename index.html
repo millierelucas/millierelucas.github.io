@@ -1,62 +1,106 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Milliere : e-portfolio</title>
+    <title>Milliere : e-portfolio</title>
+    <meta name="description" content="E-portfolio de Milliere, étudiant en école d'ingénieur à l'ENSEEHIT.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Milliere</h1>
-        <p>Étudiant en école d'ingénieur · ENSEEHIT</p>
+    <header class="navbar">
+        <a href="#accueil" class="logo">Milliere</a>
         <nav>
-            <a href="#parcours">Parcours</a>
-            <a href="#projets">Projets</a>
-            <a href="#contact">Contact</a>
+            <a href="#parcours"><span class="fr">Parcours</span><span class="en">Experience</span></a>
+            <a href="#projets"><span class="fr">Projets</span><span class="en">Projects</span></a>
+            <a href="#cv">CV</a>
+            <a href="#contact"><span class="fr">Contact</span><span class="en">Contact</span></a>
+            <button id="lang-toggle" class="lang-btn" aria-label="Changer de langue">EN / FR</button>
         </nav>
     </header>
 
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <p class="eyebrow"><span class="fr">Bienvenue</span><span class="en">Welcome</span></p>
+            <h1>Milliere</h1>
+            <p class="subtitle">
+                <span class="fr">Étudiant en école d'ingénieur · ENSEEHIT</span>
+                <span class="en">Engineering student · ENSEEHIT</span>
+            </p>
+            <div class="hero-buttons">
+                <a href="#projets" class="btn btn-primary"><span class="fr">Voir mes projets</span><span class="en">See my projects</span></a>
+                <a href="https://www.linkedin.com/in/ton-profil" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
     <main>
-        <section id="presentation">
-            <h2>À propos</h2>
-            <p>
-                Issu d'une classe préparatoire PSI, je me passionne pour les mathématiques,
-                la physique et l'informatique. Je suis aujourd'hui en formation d'ingénieur
-                à l'ENSEEHIT.
+        <section id="apropos" class="reveal">
+            <h2><span class="fr">À propos</span><span class="en">About</span></h2>
+            <p class="lead">
+                <span class="fr">Issu d'une classe préparatoire PSI, je me passionne pour les mathématiques, la physique et l'informatique. Aujourd'hui en formation d'ingénieur à l'ENSEEHIT, je cherche à concevoir des solutions concrètes et rigoureuses.</span>
+                <span class="en">Coming from a PSI preparatory program, I am passionate about mathematics, physics and computer science. I am now training as an engineer at ENSEEHIT, where I aim to design concrete and rigorous solutions.</span>
             </p>
         </section>
 
-        <section id="parcours">
-            <h2>Parcours</h2>
-            <div class="card">
-                <h3>École d'ingénieur : ENSEEHIT</h3>
-                <p class="date">2026 – 2029</p>
-                <p>Électronique, énergie électrique et automatique.</p>
-            </div>
-            <div class="card">
-                <h3>CPGE PSI : Lycée Stanislas, Cannes</h3>
-                <p class="date">Classe préparatoire aux grandes écoles</p>
-                <p>Préparation aux concours, avec mathématiques, physique et littérature.</p>
-            </div>
-        </section>
-
-        <section id="projets">
-            <h2>Projets</h2>
-            <div class="card">
-                <h3>Jeu Snake en C</h3>
-                <p>Projet réalisé en binôme avec Pouly sous Code::Blocks : menus, gestion du serpent et déplacements.</p>
-                <a href="https://github.com/ton-pseudo/snake" target="_blank">Voir le code sur GitHub</a>
+        <section id="parcours" class="reveal">
+            <h2><span class="fr">Parcours</span><span class="en">Experience</span></h2>
+            <div class="timeline">
+                <div class="card">
+                    <h3>ENSEEHIT</h3>
+                    <p class="date">2026 – 2029</p>
+                    <p class="fr">Électronique, énergie électrique et automatique.</p>
+                    <p class="en">Electronics, electrical power and automation.</p>
+                </div>
+                <div class="card">
+                    <h3>CPGE PSI · Lycée Stanislas, Cannes</h3>
+                    <p class="date"><span class="fr">Classe préparatoire aux grandes écoles</span><span class="en">Preparatory class for the grandes écoles</span></p>
+                    <p class="fr">Préparation aux concours : mathématiques, physique et littérature.</p>
+                    <p class="en">Entrance exam preparation: mathematics, physics and literature.</p>
+                </div>
             </div>
         </section>
 
-        <section id="contact">
+        <section id="projets" class="reveal">
+            <h2><span class="fr">Projets</span><span class="en">Projects</span></h2>
+            <div class="grid">
+                <article class="card project">
+                    <h3>Snake en C</h3>
+                    <p class="fr">Jeu Snake réalisé en binôme avec Pouly sous Code::Blocks : menus, gestion du serpent et déplacements.</p>
+                    <p class="en">Snake game built in pair with Pouly using Code::Blocks: menus, snake logic and movement.</p>
+                    <a href="https://github.com/ton-pseudo/snake" target="_blank" rel="noopener" class="link">
+                        <span class="fr">Voir le code →</span><span class="en">View the code →</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section id="cv" class="reveal">
+            <h2>CV</h2>
+            <div class="cv-actions">
+                <button class="btn btn-primary cv-switch" data-cv="cv-fr.pdf">Français</button>
+                <button class="btn btn-outline cv-switch" data-cv="cv-en.pdf">English</button>
+                <a id="cv-download" href="cv-fr.pdf" download class="btn btn-outline">
+                    <span class="fr">Télécharger</span><span class="en">Download</span>
+                </a>
+            </div>
+            <div class="cv-frame-wrapper">
+                <iframe id="cv-frame" src="cv-fr.pdf" title="CV"></iframe>
+            </div>
+        </section>
+
+        <section id="contact" class="reveal">
             <h2>Contact</h2>
-            <p>
-                <a href="mailto:millierelucas@gmail.com">millierelucas@gmail.com</a><br>
-                <a href="https://github.com/millierelucas" target="_blank">GitHub</a>
+            <p class="lead">
+                <span class="fr">N'hésitez pas à me contacter.</span>
+                <span class="en">Feel free to get in touch.</span>
             </p>
+            <div class="hero-buttons">
+                <a href="mailto:ton.email@exemple.fr" class="btn btn-primary">ton.email@exemple.fr</a>
+                <a href="https://www.linkedin.com/in/ton-profil" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+                <a href="https://github.com/ton-pseudo" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+            </div>
         </section>
     </main>
 
@@ -64,5 +108,6 @@
         <p>&copy; 2026 Milliere</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
